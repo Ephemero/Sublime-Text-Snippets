@@ -1,0 +1,45 @@
+<snippet>
+	<content><![CDATA[
+\documentclass{beamer}\mode<presentation> {\usetheme{default}\usecolortheme{beaver}}
+\setbeamertemplate{section in toc}[sections numbered] 
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{footline}[frame number]
+%--------Font--------%
+\usefonttheme{serif}\usepackage[T1]{fontenc}\usepackage{lmodern}
+%--------Enumerate and Math--------%
+\usepackage{enumerate,amsmath,amsbsy,amsthm,amssymb}
+%--------Graphs--------%
+\usepackage{graphicx,subfigure,caption}
+%--------Color--------%
+\usepackage{color}
+%--------Bibliography--------%
+\usepackage[round]{natbib}\usepackage{bibentry}
+%--------TOC--------%
+\AtBeginSection[]
+{ \begin{frame}<beamer>\frametitle{Outline}\tableofcontents[currentsection]
+  \end{frame}}
+%--------The title Part--------%
+\title[Summary]{${1:}}
+\author{Weiguang Liu} 
+\institute[University of Cambridge] {\medskip\textit{wl342@cam.ac.uk}}
+\date{\today} 
+\begin{document}
+%--------The Document--------%
+\begin{frame}
+	\titlepage 
+\end{frame}
+%----------------%
+${2:}
+%--------Bibliography--------%
+\begin{frame}[allowframebreaks]\frametitle{References}\small
+	\bibliographystyle{plainnat}
+	\bibliography{Library}
+\end{frame}
+%----------------%
+\end{document}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>beamer</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

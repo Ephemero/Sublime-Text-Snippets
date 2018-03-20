@@ -1,0 +1,88 @@
+{
+	"added_words":
+	[
+		"heteroscedasticity",
+		"Stochastics"
+	],
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "<",
+			"selector": "text.html"
+		},
+		{
+			"characters": "\\",
+			"selector": "text.tex.latex"
+		}
+	],
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"linux":
+	{
+		"file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
+	},
+	"osx":
+	{
+		"file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
+	},
+	"selector": "text.tex.latex",
+	"spell_check": true,
+	"target": "make_pdf",
+	"theme": "Adaptive.sublime-theme",
+	"variants":
+	[
+		{
+			"builder": "traditional",
+			"name": "Traditional"
+		},
+		{
+			"builder": "traditional",
+			"name": "PdfLaTeX",
+			"program": "pdflatex"
+		},
+		{
+			"builder": "traditional",
+			"name": "XeLaTeX",
+			"program": "xelatex"
+		},
+		{
+			"builder": "traditional",
+			"name": "LuaLaTeX",
+			"program": "lualatex"
+		},
+		{
+			"builder": "basic",
+			"name": "Basic Builder"
+		},
+		{
+			"builder": "basic",
+			"name": "Basic Builder - PdfLaTeX",
+			"program": "pdflatex"
+		},
+		{
+			"builder": "basic",
+			"name": "Basic Builder - XeLaTeX",
+			"program": "xelatex"
+		},
+		{
+			"builder": "basic",
+			"name": "Basic Builder - LuaLaTeX",
+			"program": "lualatex"
+		},
+		{
+			"builder": "script",
+			"name": "Script Builder"
+		}
+	],
+	"windows":
+	{
+		"file_regex": "^((?:.:)?[^:\n\r]*):([0-9]+):?([0-9]+)?:? (.*)$",
+		"path": "C:\\Users\\wl342\\AppData\\Local\\SumatraPDF;$PATH"
+	},
+	"word_wrap": true
+}
