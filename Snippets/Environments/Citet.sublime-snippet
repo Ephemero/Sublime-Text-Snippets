@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\cite$1{$0}
+\cite$1
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>cite</tabTrigger>

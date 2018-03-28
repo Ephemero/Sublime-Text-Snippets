@@ -2,7 +2,20 @@
 	"added_words":
 	[
 		"heteroscedasticity",
-		"Stochastics"
+		"Stochastics",
+		"Endogeneity",
+		"camblue",
+		"Nonparametric",
+		"nonparametric",
+		"nonlinear",
+		"Weiguang",
+		"Liu",
+		"gblue",
+		"nonseparable",
+		"gred",
+		"wrt",
+		"Semiparametric",
+		"semiparametric"
 	],
 	"auto_complete_triggers":
 	[
@@ -16,6 +29,7 @@
 		}
 	],
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"dictionary": "Packages/Language - English/en_GB.dic",
 	"font_size": 12,
 	"ignored_packages":
 	[

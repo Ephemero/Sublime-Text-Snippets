@@ -33,7 +33,7 @@ ${2:}
 %--------Bibliography--------%
 \begin{frame}[allowframebreaks]\frametitle{References}\small
 	\bibliographystyle{plainnat}
-	\bibliography{Library}
+	\bibliography{C:/Users/wl342/Documents/lib}
 \end{frame}
 %----------------%
 \end{document}

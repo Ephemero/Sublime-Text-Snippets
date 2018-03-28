@@ -13,25 +13,29 @@
 	{ "keys": ["alt+n"], "command": "new_file" },
 	{ "keys": ["alt+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
 	{ "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-	{ "keys": ["ctrl+3"], "command": "insert_snippet", "args": {"contents": "{$0}"}, "context":
-		[
-			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
-			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
-			{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
-		]
+	{ "keys": ["ctrl+h"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+	{ "keys": ["ctrl+3"], "command": "insert_snippet", "args": {"contents": "{$0}"}, 
+		// "context":
+		// [
+		// 	{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+		// 	{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+		// 	{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+		// ]
 	},
-	{ "keys": ["ctrl+2"], "command": "insert_snippet", "args": {"contents": "[$0]"}, "context":
-		[
-			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
-			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
-			{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
-		]
+	{ "keys": ["ctrl+2"], "command": "insert_snippet", "args": {"contents": "[$0]"}, 
+		// "context":
+		// [
+		// 	{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+		// 	{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+		// 	{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+		// ]
 	},
-	{ "keys": ["ctrl+1"], "command": "insert_snippet", "args": {"contents": "($0)"}, "context":
-		[
-			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
-			{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
-			{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
-		]
+	{ "keys": ["ctrl+1"], "command": "insert_snippet", "args": {"contents": "($0)"}, 
+		// "context":
+		// [
+		// 	{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+		// 	{ "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+		// 	{ "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+		// ]
 	},
 ]

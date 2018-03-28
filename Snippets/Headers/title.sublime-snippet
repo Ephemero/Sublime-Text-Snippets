@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\title{$1:}\author{Weiguang Liu}\date{}\maketitle
+\title{$1}\author{Weiguang Liu}\date{}\maketitle
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>title</tabTrigger>

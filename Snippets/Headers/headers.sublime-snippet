@@ -1,24 +1,13 @@
 <snippet>
 	<content><![CDATA[
 \documentclass[11pt]{article}
-%--------Enumerate and Math--------%
-\usepackage{enumerate,amsmath,amsbsy,amsthm,amssymb}
-%--------Graphs and Color--------%
-\usepackage{graphicx,subfigure,caption,color}
-%--------Bibliography--------%
-\usepackage[round]{natbib}\usepackage{bibentry}
-%--------Tables--------%
-\usepackage{multirow}
-%--------Hyper ref--------% \usepackage{hyperref}
-%--------For Pandoc--------% \def\tightlist{}
-%--------For Listing--------% \usepackage[autolinebreaks]{mcode}
-%--------Beginning of Document--------%
+\usepackage{C:/Users/wl342/Documents/headers}
+%--------Hello World--------%
 %=====================================%
 \begin{document}
-${0:}
+$0
 %--------Bibliography--------%
-\bibliographystyle{plainnat}
-\bibliography{My Library}
+\bibliography{C:/Users/wl342/Documents/lib}
 \end{document}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
