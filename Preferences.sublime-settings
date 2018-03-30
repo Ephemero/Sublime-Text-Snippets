@@ -15,7 +15,8 @@
 		"gred",
 		"wrt",
 		"Semiparametric",
-		"semiparametric"
+		"semiparametric",
+		"pointwise"
 	],
 	"auto_complete_triggers":
 	[

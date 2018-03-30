@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
 \documentclass[11pt]{article}
-\usepackage{C:/Users/wl342/Documents/headers}
+\usepackage{C:/Users/wl342/Documents/LocalUtility/headers}
 %--------Hello World--------%
 %=====================================%
 \begin{document}
 $0
 %--------Bibliography--------%
-\bibliography{C:/Users/wl342/Documents/lib}
+\bibliography{C:/Users/wl342/Documents/LocalUtility/lib}
 \end{document}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

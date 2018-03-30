@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\frac{${1:}}{$0}
+\frac{${1:}}{$2}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>fra</tabTrigger>

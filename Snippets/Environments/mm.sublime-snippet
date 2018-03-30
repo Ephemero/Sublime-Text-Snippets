@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
-\begin{gather*}
+\begin{align*}
 	$0 
-\end{gather*}
+\end{align*}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mm</tabTrigger>
