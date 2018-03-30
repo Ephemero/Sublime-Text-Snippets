@@ -1,9 +1,11 @@
 <snippet>
 	<content><![CDATA[
-\left{${1:}$0\right}
+\begin{proof}
+	$0
+\end{proof}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>;3</tabTrigger>
+	<tabTrigger>proof</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>

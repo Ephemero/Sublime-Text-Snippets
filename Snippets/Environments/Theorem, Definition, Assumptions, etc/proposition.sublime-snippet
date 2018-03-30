@@ -1,9 +1,11 @@
 <snippet>
 	<content><![CDATA[
-\left[${1:}$0\right]
+\begin{prop}
+	$0
+\end{prop}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>;2</tabTrigger>
+	<tabTrigger>prop</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
