@@ -16,7 +16,10 @@
 		"wrt",
 		"Semiparametric",
 		"semiparametric",
-		"pointwise"
+		"pointwise",
+		"lim",
+		"asymptotics",
+		"Lindeberg"
 	],
 	"auto_complete_triggers":
 	[
