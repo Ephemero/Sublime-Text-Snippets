@@ -19,7 +19,11 @@
 		"pointwise",
 		"lim",
 		"asymptotics",
-		"Lindeberg"
+		"Lindeberg",
+		"Lindeberg's",
+		"Slutsky's",
+		"Epanechnikov",
+		"Newey"
 	],
 	"auto_complete_triggers":
 	[
@@ -39,6 +43,10 @@
 	[
 		"Markdown",
 		"Vintage"
+	],
+	"ignored_words":
+	[
+		"htbp"
 	],
 	"linux":
 	{
