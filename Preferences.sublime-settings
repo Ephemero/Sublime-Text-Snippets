@@ -23,7 +23,14 @@
 		"Lindeberg's",
 		"Slutsky's",
 		"Epanechnikov",
-		"Newey"
+		"Newey",
+		"Lehnman",
+		"Vaart",
+		"Jun",
+		"Shao",
+		"Billingsley",
+		"Blundell",
+		"Matzkin"
 	],
 	"auto_complete_triggers":
 	[
@@ -46,7 +53,11 @@
 	],
 	"ignored_words":
 	[
-		"htbp"
+		"",
+		"htbp",
+		"md",
+		"plainnat",
+		"tex"
 	],
 	"linux":
 	{
