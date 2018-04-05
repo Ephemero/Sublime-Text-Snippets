@@ -5,15 +5,11 @@
 	],
 	"installed_packages":
 	[
-		"Auto-Spacing",
 		"AutoSpell",
 		"BracketHighlighter",
-		"LaTeXing",
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Monokai Extended",
-		"Package Control",
-		"Pandoc",
-		"ProjectManager"
+		"Package Control"
 	]
 }
