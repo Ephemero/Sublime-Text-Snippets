@@ -34,7 +34,8 @@
 		"vs",
 		"Linton's",
 		"homophily",
-		"unobservables"
+		"unobservables",
+		"Setup"
 	],
 	"auto_complete_triggers":
 	[
@@ -57,10 +58,13 @@
 	"ignored_words":
 	[
 		"",
+		"Paula",
 		"htbp",
 		"md",
 		"plainnat",
-		"tex"
+		"subgraph",
+		"tex",
+		"wl342"
 	],
 	"linux":
 	{

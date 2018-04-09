@@ -36,5 +36,4 @@
         }
     }
 	},
-	{ "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": {"to": "line"} },
 ]
