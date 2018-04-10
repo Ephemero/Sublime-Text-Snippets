@@ -590,9 +590,9 @@
 	// data when a TeX document is loaded; setting these to `false` will
 	// cause the cache to be built when first needed
 	"cache_on_load": {
-	// 	// analysis: the internal view that LaTeXTools has of your document
+		// analysis: the internal view that LaTeXTools has of your document
 		"analysis": true,
-	// 	// bibliography: ensures the bibliography is parsed and cached
+		// bibliography: ensures the bibliography is parsed and cached
 		"bibliography": true
 	},
 
@@ -600,12 +600,12 @@
 	// leaving these as `true` will ensure LaTeXTools reloads the data on save,
 	// if necessary; setting these to `false` will cause the cache to be
 	// re-built according to its rules
-	"cache_on_save": {
+	// "cache_on_save": {
 		// analysis: the internal view that LaTeXTools has of your document
-		"analysis": true,
+		// "analysis": true,
 		// bibliography: ensures the bibliography is parsed and cached
-		"bibliography": true
-	},
+		// "bibliography": true
+	// },
 
 	/* The life-span of the local cache.
 	After this life-span the local cache will automatically be invalidated and refreshed.
