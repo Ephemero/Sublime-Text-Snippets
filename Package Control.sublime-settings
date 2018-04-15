@@ -6,6 +6,8 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"CiteBibtex",
+		"Citer",
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Monokai Extended",
