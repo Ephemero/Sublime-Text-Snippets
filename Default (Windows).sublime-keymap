@@ -41,5 +41,5 @@
 		"context": [
 			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
 		// "command": "insert_snippet", "args": {"contents": "{$0}"} },
-		"command": "run_macro_file", "args": {"file": "res://Packages/User/Macro/a.sublime-macro"}},
+		"command": "run_macro_file", "args": {"file": "res://Packages/User/Macro/f9_insert_citation.sublime-macro"}},
 ]
