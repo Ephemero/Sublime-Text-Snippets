@@ -6,7 +6,7 @@
 %--------Hello World--------%
 %=====================================%
 \begin{document}
-$0
+	$0
 %--------Bibliography--------%
 \printbibliography
 \end{document}

@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-\begin{defn}
+\begin{defn}[]
 	$0
 \end{defn}
 ]]></content>
