@@ -37,7 +37,9 @@
 		"unobservables",
 		"Setup",
 		"payoffs",
-		"payoff"
+		"payoff",
+		"subnetwork",
+		"endogeneity"
 	],
 	"auto_complete_triggers":
 	[
