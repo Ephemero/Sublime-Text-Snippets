@@ -21,7 +21,7 @@
 	// Fill-helper autocompletion trigger for environment names after \begin{ and \end{
 	// this requires the LaTeX-cwl package and might not have a complete list of all environments.
 	// You can also use toggle: C-l,t,a,e
-	"env_auto_trigger": false,
+	"env_auto_trigger": true,
 
 	// Fill-helper autocompletion trigger for glossary entries \gls{ and \acrfull{
 	"glossary_auto_trigger": true,
@@ -54,7 +54,7 @@
 	// "always" (always show command completions)
 	// "prefixed" (default, show command completions if the current word is prefixed with '\')
 	// "never" (never show command completions)
-	"command_completion": "prefixed",
+	"command_completion": "never",
 
 	// valid texfile extensions
 	"tex_file_exts": [".tex"],
