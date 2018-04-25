@@ -36,6 +36,10 @@
         }
     }
 	},
+	{ 	"keys": ["f8"], 
+		"context":  [
+			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
+		"command": "delete_temp_files"},
 	{ 	"keys": ["f9"],
 		"context":  [
 			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
