@@ -44,4 +44,15 @@
 		"context":  [
 			{"key": "selector", "operator": "equal", "operand": "text.tex.latex"}],
 		"command": "latex_fill_all"},
+	{ "keys": ["f2"], "command": "timestamp" },
+	{ "keys": ["f1"], "command": "datestamp" },
+	// For capslock
+	// + - * / ^ _ %
+	{ "keys": ["ctrl+alt+shift+i"], "command": "insert_snippet", "args": {"contents": "+$0"}},	
+	{ "keys": ["ctrl+alt+shift+j"], "command": "insert_snippet", "args": {"contents": "-$0"}},	
+	{ "keys": ["ctrl+alt+shift+k"], "command": "insert_snippet", "args": {"contents": "*$0"}},	
+	{ "keys": ["ctrl+alt+shift+l"], "command": "insert_snippet", "args": {"contents": "/$0"}},	
+	{ "keys": ["ctrl+alt+shift+,"], "command": "insert_snippet", "args": {"contents": "^$0"}},	
+	{ "keys": ["ctrl+alt+shift+;"], "command": "insert_snippet", "args": {"contents": "_$0"}},	
+	{ "keys": ["ctrl+alt+shift+."], "command": "insert_snippet", "args": {"contents": "%$0"}},	
 ]

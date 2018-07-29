@@ -8,7 +8,7 @@
 \begin{document}
 	$0
 %--------Bibliography--------%
-\printbibliography
+% \printbibliography
 \end{document}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

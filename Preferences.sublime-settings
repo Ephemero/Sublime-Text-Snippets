@@ -39,7 +39,16 @@
 		"payoffs",
 		"payoff",
 		"subnetwork",
-		"endogeneity"
+		"endogeneity",
+		"setup",
+		"Chernozhukov",
+		"Durrett",
+		"uk",
+		"ac",
+		"",
+		"frequentist",
+		"extremum",
+		"subsamples"
 	],
 	"auto_complete_triggers":
 	[
@@ -64,7 +73,9 @@
 	"ignored_words":
 	[
 		"",
+		"",
 		"Paula",
+		"etc",
 		"htbp",
 		"md",
 		"plainnat",

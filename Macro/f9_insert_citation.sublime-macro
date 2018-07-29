@@ -1,4 +1,0 @@
-[
-    {"command": "insert_snippet", "args": {"contents": "\\citet{$0}"}},
-    {"command": "latex_fill_all"}
-]
