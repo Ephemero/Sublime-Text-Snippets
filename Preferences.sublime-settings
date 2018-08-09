@@ -61,7 +61,8 @@
 			"selector": "text.tex.latex"
 		}
 	],
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended Origin.tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"font_size": 12,
 	"ignored_packages":
