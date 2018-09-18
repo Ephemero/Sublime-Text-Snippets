@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"func",
+				"func_bspline_vector"
+			],
+			[
+				"b",
+				"b_vec"
+			],
+			[
+				"B",
+				"Bspline"
+			],
+			[
 				"phi",
 				"phi"
 			],
@@ -38,10 +50,6 @@
 			[
 				"J",
 				"J"
-			],
-			[
-				"func",
-				"func_lr"
 			],
 			[
 				"fun",
@@ -102,10 +110,6 @@
 			[
 				"X",
 				"X1"
-			],
-			[
-				"b",
-				"boundry_up"
 			],
 			[
 				"bou",
@@ -216,82 +220,67 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/gendata.m",
+			"file": "/C/Users/wl342/Desktop/Journal.txt",
 			"settings":
 			{
-				"buffer_size": 941,
+				"buffer_size": 569,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/MCMC_inference.m",
-			"settings":
-			{
-				"buffer_size": 2294,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "%% func_likelihood: likelihood function\n% theta = [gamma, beta]\nfunction [l] = func_likelihood_negative(theta)\n\tload observed y x1 x2 x3 x4 x5 x6 n T N\n    inside = zeros(n,T-1);\n\tfor t = 1:T-1\n\t\tinside(:,t) = (theta(1) * x1(:,t+1) + theta(2)*x2(:,t+1) + theta(3)*x3(:,t+1) + theta(4)*x4(:,t+1) + theta(5)*x5(:,t+1) + theta(6)*y(:,t)) .* ((-1).^(y(:,t+1)+1)) ;\n        inside(:,t) = inside(:,t) + func_sieve(x6(:,t+1),4)*theta(N-4:N)';\n\tend\n\tl = - sum(sum(log(normcdf(inside))));\n\t%l = l - sum((Bern*theta(N-4:N)').*y(:,1)) - sum((1-Bern*theta(N-4:N)').*(1-y(:,1)));\nend",
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_likelihood_negative.m",
-			"file_size": 581,
-			"file_write_time": 131782193367076669,
-			"settings":
-			{
-				"buffer_size": 570,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "%% func_bspline: generate basis spline from data x with knots stored in t\n% m is the degree \nfunction [Bspline] = func_bspline(x,t,r)\n\tK = (r+1)* (length(t));\n\tBspline = zeros(length(x),K);\n\tfor i = 1: length(t)-1\n\t\tBspline(:,i) = (x >= t(i)) .* (x < t(i+1));\n\tend\n\tj = 1; k = length(t);\n\twhile j < r\n\t\tfor i = 1:length(t) - 1\n\t\t\tBspline(:,k) = (x-t(i))/(t(i+j)-t(i))*B",
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_bspline.m",
-			"file_size": 378,
-			"file_write_time": 131782209107426219,
-			"settings":
-			{
-				"buffer_size": 369,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/Log.md",
-			"settings":
-			{
-				"buffer_size": 2356,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "[\n    // selection pairing with *, _ and `\n    { \"keys\": [\"*\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"*$0*\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_*]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"*\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Skip Closing Character.sublime-macro\"}, \"context\":\n     [\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\*\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"*\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"*${0:$SELECTION}*\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"backspace\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/Default/Delete Left Right.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\*$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\*\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\" \"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Start List Item.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\*$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\*\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"tab\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Start List Item Tab.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\*$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\*\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"tab\"], \"command\": \"indent_list_item\", \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\s*(>\\\\s*)?[*+\\\\-]\\\\s+$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"tab\"], \"command\": \"indent_list_multiitem\", \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"markup.list\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"shift+tab\"], \"command\": \"indent_list_item\", \"args\": {\"reverse\": true}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\s*(>\\\\s*)?[*+\\\\-]\\\\s+$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"shift+tab\"], \"command\": \"indent_list_multiitem\", \"args\": {\"reverse\": true}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"markup.list\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"_\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"_$0_\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"_\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"_${0:$SELECTION}_\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"_\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Skip Closing Character.sublime-macro\"}, \"context\":\n     [\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^_\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"backspace\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/Default/Delete Left Right.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"_$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^_\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\" \"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Start List Item.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\_$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\_\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"`\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"`$0`\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_`]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"`\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"`${0:$SELECTION}`\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"`\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Skip Closing Character.sublime-macro\"}, \"context\":\n     [\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^`\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"~\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"~~${0:$SELECTION}~~\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"backspace\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/Default/Delete Left Right.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"`$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^`\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    // Bold on Alt + B\n    { \"keys\": [\"alt+b\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Bold.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+b\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${MD_BOLD_MARKER}$1${MD_BOLD_MARKER}\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"alt+b\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${MD_BOLD_MARKER}${SELECTION/(^[\\\\*_]*|[\\\\*_]*$)//g}${MD_BOLD_MARKER}\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    // italics on Alt + I\n    { \"keys\": [\"alt+i\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Italic.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+i\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${MD_ITALIC_MARKER}$0${MD_ITALIC_MARKER}\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"alt+i\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${MD_ITALIC_MARKER}${SELECTION/(^[\\\\*_]*|[\\\\*_]*$)//g}${MD_ITALIC_MARKER}\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n\n    // Unbold on Alt + B if already bold\n    { \"keys\": [\"alt+b\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${SELECTION/(^[\\\\*_]{2}|[\\\\*_]{2}$)//g}\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"text\", \"operator\": \"regex_match\", \"operand\": \"^[*_]{2}.*[*_]{2}$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+b\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Unbold Unitalicize.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown markup.bold.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+b\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Unbold Unitalicize.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\b__+\\\\S+__+$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n\n    // Unitalicize on Alt + I if already italic\n    { \"keys\": [\"alt+i\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${SELECTION/(^[\\\\*_]|[\\\\*_]$)//g}\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"text\", \"operator\": \"regex_match\", \"operand\": \"^[*_].*[*_]$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+i\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Unbold Unitalicize.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown markup.italic.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+i\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Transform Word - Unbold Unitalicize.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"\\\\b_(?!_)\\\\S+_$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n\n    // Headers\n    { \"keys\": [\"#\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#${0: ${SELECTION/(^ | $)//g} }#\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"#{6}\", \"match_all\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"#\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#${0: ${SELECTION/(^ | $)//g}}\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"#{6}\", \"match_all\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"#\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Padded Headline.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"#{6}\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"#+\", \"match_all\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"#\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Padded Headline.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"#{6}\", \"match_all\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"enter\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \" ${TM_CURRENT_LINE/(#+?)[^#].*$/$1\\n/}\"}, \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^#+\\\\s+[^#]\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"#+$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\s*$\", \"match_all\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Extend lists\n    { \"keys\": [\"enter\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${TM_CURRENT_LINE/^(\\\\s*([*\\\\-+])(\\\\s+)).*/\\n$2$3/}\"}, \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^(\\\\s*([*\\\\-+])\\\\s+)\\\\S.*\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Extend lists with GFM tasks\n    { \"keys\": [\"enter\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${TM_CURRENT_LINE/^(\\\\s*([*\\\\-+])(\\\\s+)\\\\[[ x]\\\\](\\\\s+)).*/\\n$2$3[ ]$4/}\"}, \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^(\\\\s*([*\\\\-+])\\\\s+)\\\\[[ x]\\\\]\\\\s+\\\\S.*\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Extend Numbered Lists\n    { \"keys\": [\"enter\"], \"command\": \"number_list\", \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^(\\\\s*(\\\\d+\\\\.)\\\\s+)\\\\S.*\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Extend Numbered Reference\n    { \"keys\": [\"enter\"], \"command\": \"number_list_reference\", \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^(\\\\s*\\\\[(\\\\d+)\\\\]:\\\\s*)\\\\S.*\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Remove empty list item\n    { \"keys\": [\"enter\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Remove Empty List Item.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^(\\\\s*(\\\\[\\\\d+\\\\]:|[*\\\\-+]|\\\\d+\\\\.)\\\\s+)$\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\s*$\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Extend blockquote\n    { \"keys\": [\"enter\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"${TM_CURRENT_LINE/^(\\\\s*((>+\\\\s+)+([*\\\\-+]\\\\s+)?)).*/\\n$2/}\"}, \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\s*>+\\\\s+\", \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false }\n        ]\n    },\n    // Convert to blockquote\n    { \"keys\": [\">\"], \"command\": \"run_macro_file\", \"args\": {\"file\": \"Packages/MarkdownEditing/macros/Convert to Blockquote.sublime-macro\"}, \"context\":\n        [\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"tab\"], \"command\": \"complete_underlined_header\", \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"auto_complete_visible\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"^\\\\-+$|^\\\\=+$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.raw\", \"match_all\": true }\n        ]\n    },\n    // Surround with <> on URLs, regex copied from https://mathiasbynens.be/demo/url-regex, @diegoperini (502 chars)\n    { \"keys\": [\"<\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"<${0:$SELECTION}>\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"text\", \"operator\": \"regex_match\", \"operand\": \"(?:(?:https?|ftp)://)(?:\\\\S+(?::\\\\S*)?@)?(?:(?!10(?:\\\\.\\\\d{1,3}){3})(?!127(?:\\\\.\\\\d{1,3}){3})(?!169\\\\.254(?:\\\\.\\\\d{1,3}){2})(?!192\\\\.168(?:\\\\.\\\\d{1,3}){2})(?!172\\\\.(?:1[6-9]|2\\\\d|3[0-1])(?:\\\\.\\\\d{1,3}){2})(?:[1-9]\\\\d?|1\\\\d\\\\d|2[01]\\\\d|22[0-3])(?:\\\\.(?:1?\\\\d{1,2}|2[0-4]\\\\d|25[0-5])){2}(?:\\\\.(?:[1-9]\\\\d?|1\\\\d\\\\d|2[0-4]\\\\d|25[0-4]))|(?:(?:[a-z\\\\x{00a1}-\\\\x{ffff}0-9]+-?)*[a-z\\\\x{00a1}-\\\\x{ffff}0-9]+)(?:\\\\.(?:[a-z\\\\x{00a1}-\\\\x{ffff}0-9]+-?)*[a-z\\\\x{00a1}-\\\\x{ffff}0-9]+)*(?:\\\\.(?:[a-z\\\\x{00a1}-\\\\x{ffff}]{2,})))(?::\\\\d{2,5})?(?:/[^\\\\s]*)?\", \"match_all\": true }\n        ]\n    },\n\n    // inline image insertion\n    { \"keys\": [\"super+shift+k\"], \"command\": \"reference_new_inline_image\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.reference_new_inline_image\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    // modify [] pairing so that selection is removed after pairing, ready for [] or ()\n    { \"keys\": [\"[\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"[$SELECTION]$0\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    // run paste as link command on selected text\n    { \"keys\": [\"ctrl+alt+v\"], \"command\": \"reference_new_inline_link\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.reference_new_inline_link\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+alt+r\"], \"command\": \"reference_new_reference\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.reference_new_reference\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+alt+g\"], \"command\": \"reference_jump\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.reference_jump\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    // Set Headers Levels With Shortcuts\n    { \"keys\": [\"ctrl+1\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"# $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+1\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+1\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }#$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+2\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"## $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+2\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"##${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+2\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"##${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }##$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+3\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"### $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+3\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"###${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+3\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"###${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }###$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+4\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#### $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+4\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"####${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+4\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"####${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }####$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+5\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"##### $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+5\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#####${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+5\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"#####${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }#####$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+6\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"###### $0\"}, \"context\":\n     [\n         { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n         { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n         { \"key\": \"following_text\", \"operator\": \"regex_contains\", \"operand\": \"^(?:\\t| |\\\\)|]|\\\\}|$)\", \"match_all\": true },\n         { \"key\": \"preceding_text\", \"operator\": \"not_regex_contains\", \"operand\": \"['a-zA-Z0-9_]$\", \"match_all\": true },\n         { \"key\": \"eol_selector\", \"operator\": \"not_equal\", \"operand\": \"string.quoted.single\", \"match_all\": true },\n         { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n     ]\n    },\n    { \"keys\": [\"ctrl+6\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"######${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g}}$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": false },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+6\"], \"command\": \"insert_snippet\", \"args\": {\"contents\": \"######${0: ${SELECTION/(^( +)?(#+)?\\\\s*|\\\\s*(#+)?( +)?$)//g} }######$1\"}, \"context\":\n        [\n            { \"key\": \"setting.auto_match_enabled\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"setting.mde.match_header_hashes\", \"operator\": \"equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"alt+shift+6\"], \"command\": \"reference_new_footnote\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.reference_new_footnote\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+.\"], \"command\": \"indent_quote\", \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+,\"], \"command\": \"deindent_quote\", \"context\":\n        [\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"regex_contains\", \"operand\": \"(> )+\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"shift+tab\"], \"command\": \"fold_section\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.fold_section\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"not_regex_match\", \"operand\": \"^\\\\s+\", \"match_all\": true },\n            { \"key\": \"following_text\", \"operator\": \"not_regex_match\", \"operand\": \"^$\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"shift+tab\"], \"command\": \"fold_section\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.fold_section\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": true, \"match_all\": true },\n            { \"key\": \"preceding_text\", \"operator\": \"not_regex_match\", \"operand\": \"^\\\\s+\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.list\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"shift+tab\"], \"command\": \"fold_section\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.fold_section\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selection_empty\", \"operator\": \"equal\", \"operand\": false, \"match_all\": true },\n            { \"key\": \"text\", \"operator\": \"regex_contains\", \"operand\": \"^(#{1,6}(?!#))|^(-{3,}|={3,})$\"},\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+tab\"], \"command\": \"show_fold_all_sections\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.show_fold_all_sections\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+alt+pageup\"], \"command\": \"goto_previous_heading\", \"args\": {\"same_level\": true}, \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.goto_previous_heading\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+alt+pagedown\"], \"command\": \"goto_next_heading\", \"args\": {\"same_level\": true}, \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.goto_next_heading\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+pageup\"], \"command\": \"goto_previous_heading\", \"args\": {\"same_level\": false}, \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.goto_previous_heading\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    { \"keys\": [\"ctrl+shift+pagedown\"], \"command\": \"goto_next_heading\", \"args\": {\"same_level\": false}, \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.goto_next_heading\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]\n    },\n    {\"keys\": [\"ctrl+alt+h\"], \"command\": \"open_home_page\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.open_home_page\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]    \n    },\n    {\"keys\": [\"ctrl+alt+d\"], \"command\": \"open_page\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.open_page\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"meta.link.wiki.markdown\", \"match_all\": true }\n        ]    \n    },\n    {\"keys\": [\"ctrl+alt+d\"], \"command\": \"make_page_reference\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.make_page_reference\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"meta.link.wiki.markdown\", \"match_all\": true },\n            { \"key\": \"selector\", \"operator\": \"not_equal\", \"operand\": \"markup.underline.link.markdown\", \"match_all\": true }            \n        ]    \n    },\n    {\"keys\": [\"ctrl+alt+x\"], \"command\": \"list_back_links\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.list_back_links\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]    \n    },\n    {\"keys\": [\"ctrl+alt+j\"], \"command\": \"open_journal\", \"context\":\n        [\n            { \"key\": \"setting.mde.keymap_disable.open_journal\", \"operator\": \"not_equal\", \"operand\": true },\n            { \"key\": \"selector\", \"operator\": \"equal\", \"operand\": \"text.html.markdown\", \"match_all\": true }\n        ]    \n    }\n]\n",
-			"file": "/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
-			"file_size": -1,
-			"file_write_time": -1,
-			"settings":
-			{
-				"buffer_size": 48697,
 				"line_ending": "Windows",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/classical_inference.m",
-			"settings":
-			{
-				"buffer_size": 1700,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"name": "Journal"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
@@ -300,6 +289,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ss la",
+				"Set Syntax: LaTeX"
+			],
 			[
 				"ss m",
 				"Set Syntax: MATLAB"
@@ -355,10 +348,6 @@
 			[
 				"upd",
 				"Package Control: Upgrade Package"
-			],
-			[
-				"ss la",
-				"Set Syntax: LaTeX"
 			],
 			[
 				"ssma",
@@ -577,10 +566,45 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap"
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Simulations"
 	],
 	"file_history":
 	[
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/wl342/timestamp.py",
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/wl342/datestamp.py",
+		"/C/Users/wl342/Downloads/WBEA70.ASC",
+		"/C/Users/wl342/AppData/Local/Temp/7zOC91ED290/readme.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zO48BF8830/WTDB78_1.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zOC90C1B6F/WBEA71.ASC.txt",
+		"/C/Users/wl342/Downloads/WBEA70.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zOC30F47E3/WBEA70.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zO47B6FB42/WT_SITC.TXT",
+		"/C/Users/wl342/AppData/Local/Temp/7zO42FE8D41/WTDB.TXT",
+		"/C/Users/wl342/AppData/Local/Temp/7zO8B0A281A/WT_BILAT.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zOCC8A4309/WT_BILAT.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zO4515F858/WBEA.TXT",
+		"/C/Users/wl342/AppData/Local/Temp/7zO01AA9938/readme.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zO01AE2508/WBEA70.ASC.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zO4E066058/WTDB.TXT",
+		"/C/Users/wl342/AppData/Local/Temp/7zOCB9B4EC8/readme.txt",
+		"/C/Users/wl342/AppData/Local/Temp/7zOCB9144B8/WBEA.TXT",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/MCMC_inference.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/classical_inference.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/RWMH.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_bspline.m",
+		"/C/Users/wl342/Desktop/GRE Verbal Reasoning.txt",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/functions/RWMH.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Simulations/summary.tex",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_likelihood_negative.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_p1.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/gendata.m",
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/Log.md",
+		"/C/Users/wl342/Documents/LocalUtility/headers.sty",
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Math Formulae/Distributed/iid.sublime-snippet",
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Math Formulae/Distributed/todistribution.sublime-snippet",
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/Section/journal.sublime-snippet",
+		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_sieve.m",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_bern_polynomial.m",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/gen_bern_func.m",
@@ -588,17 +612,13 @@
 		"/C/Users/wl342/AppData/Local/Temp/7zO89C41C3C/ReadMe.txt",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/classical_inference.m",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/multinomial_resampling.m",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown.sublime-settings",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/Log.md",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Markdown.sublime-settings",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/MultiMarkdown.sublime-settings",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Markdown (Standard).sublime-settings",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/wl342/timestamp.py",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/MCMC_inference.m",
 		"/C/Users/wl342/Downloads/ss-example/libex/data.txt",
 		"/C/Users/wl342/Downloads/ss-example/libex/objfun.m",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/LaTeXTools.sublime-settings",
@@ -623,7 +643,6 @@
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/import.sublime-snippet",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/label.sublime-snippet",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Math Formulae/To save the slash/sup.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Math Formulae/Distributed/iid.sublime-snippet",
 		"/C/Users/wl342/Downloads/fb_9701441.txt",
 		"/C/Users/wl342/Local Data/V2汉化版3.03/维多利亚2：3.03之52简体中文汉化包第五版说明.txt",
 		"/C/Users/wl342/Desktop/new.tex",
@@ -632,7 +651,6 @@
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-year report viva/viva.tex",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/Beamer frame.sublime-snippet",
 		"/C/Users/wl342/Documents/LocalUtility/mybeamer.sty",
-		"/C/Users/wl342/Documents/LocalUtility/headers.sty",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeX.sublime-completions",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeX math.sublime-completions",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-year report viva/viva.log",
@@ -651,7 +669,6 @@
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Headers/beamer.sublime-snippet",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/1 Reports/Nonlinear Econometrics Review.tex",
 		"/C/Users/wl342/Documents/LocalUtility/headers - Copy.sty",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/Section/journal.sublime-snippet",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Macro/datestamp.py",
@@ -681,38 +698,11 @@
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Model/1.tex",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Introduction/1.tex",
 		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/CS/1.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Empirical/1.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/questions.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/4 Finished/PhD 30 Nonparametric Part/main.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/4 Finished/PhD 30 Bayesian part/main.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Extensions/1.tex",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Environments/Enumerate/enumerate.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Autocomplete/my.sublime-completions",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/Default (Windows).sublime-keymap",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/AcademicMarkdown.sublime-settings",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/AutoSpell.sublime-settings",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Markdown_Headings 1.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Matlab.sublime-settings",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Math Formulae/norm.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/latex_own_command_completions.py",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/Insert environment.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/Wrap in command.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/Wrap in environment.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
-		"/C/Users/wl342/Desktop/catalogue.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Cambridge/CV/CV(Weiguang Liu) 20180419.tex",
-		"/C/Users/wl342/AppData/Local/Temp/7zO4829AE6D/cv_4.tex",
-		"/C/Users/wl342/AppData/Local/Temp/7zO4823068E/cv_4.tex",
-		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/0 Readings/Identification/Parametric/parametric.tex",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/superscript - Copy.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/subscript.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Macro/f9_insert_citation.sublime-macro",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Format/Citet.sublime-snippet",
-		"/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/User/Snippets/Headers/subfiles.sublime-snippet"
+		"/C/Users/wl342/OneDrive - University Of Cambridge/Projects/First-Year Report/Empirical/1.tex"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
@@ -726,6 +716,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tic",
+			"toc",
+			"i",
+			":",
+			",",
+			"%% func_likelihood: likelihood function\n% theta = [gamma, beta]\nfunction [l] = func_likelihood_negative(theta)\n\tq = integral(@(x)func_p1(x,theta),0,1);\n    %inside(:,t) = inside(:,t) + output*theta(N-5:N)';\n\tl = - sum((log(q)));\n\t% l = l - sum((output*0.5*(sin(theta(N-5:N))+1)').*y1) - sum((1-output*0.5*(sin(theta(N-5:N))+1)').*(1-y1));\nend\n\n%% calculate the p1: p1 = Times| some normal pdf\nfunction [pre_integral_p] = func_p1(u,theta)\n\tload observed,",
+			"pre_integral_p",
+			" ",
+			"}'}",
+			"theta(N-5:N)",
+			"Bern",
+			"b_vec",
 			"B",
 			"spline",
 			"toc",
@@ -799,28 +801,29 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/gendata.m",
+					"file": "/C/Users/wl342/Desktop/Journal.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 941,
+						"buffer_size": 569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								872,
-								872
+								459,
+								459
 							]
 						],
 						"settings":
 						{
+							"auto_name": "Journal",
 							"bracket_highlighter.busy": false,
 							"bracket_highlighter.clone": -1,
 							"bracket_highlighter.clone_locations":
@@ -840,1127 +843,56 @@
 							},
 							"bracket_highlighter.clone_regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/MCMC_inference.m",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2294,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1516,
-								1516
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 431.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_likelihood_negative.m",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								568,
-								568
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": 16,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/func_bspline.m",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 369,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								369,
-								369
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/Log.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2356,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2295,
-								2295
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1393.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/wl342/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48697,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22218,
-								22218
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										22976,
-										22977
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										22094,
-										22095
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 6783.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/wl342/OneDrive - University Of Cambridge/Utility/Matlab/MCMC vs Bootstrap/classical_inference.m",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1700,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -1984,41 +916,16 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -2034,21 +941,44 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/Matlab/Matlab.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -2056,7 +986,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 41.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -2089,11 +1019,15 @@
 	{
 		"height": 0.0
 	},
+	"output.latextools":
+	{
+		"height": 133.0
+	},
 	"pinned_build_system": "",
 	"project": "MCMC vs Bootstrap.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 60.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2102,6 +1036,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"mc",
+				"MCMC vs Bootstrap\\MCMC_inference.m"
+			],
+			[
+				"ne",
+				"MCMC vs Bootstrap\\func_likelihood_negative.m"
+			],
+			[
+				"neg",
+				"MCMC vs Bootstrap\\func_likelihood_negative.m"
+			],
+			[
+				"gen",
+				"gendata.m"
+			],
 			[
 				"l",
 				"Log.md"
@@ -2129,10 +1079,6 @@
 			[
 				"fun",
 				"func_likelihood_negative.m"
-			],
-			[
-				"gen",
-				"gendata.m"
 			],
 			[
 				"",
