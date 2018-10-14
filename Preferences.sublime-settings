@@ -48,7 +48,9 @@
 		"",
 		"frequentist",
 		"extremum",
-		"subsamples"
+		"subsamples",
+		"nonparametrically",
+		"Hellinger"
 	],
 	"auto_complete_triggers":
 	[
