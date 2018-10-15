@@ -50,7 +50,9 @@
 		"extremum",
 		"subsamples",
 		"nonparametrically",
-		"Hellinger"
+		"Hellinger",
+		"homoscedasticity",
+		""
 	],
 	"auto_complete_triggers":
 	[
@@ -77,9 +79,13 @@
 	[
 		"",
 		"",
+		"",
+		"",
 		"Paula",
+		"cf",
 		"etc",
 		"htbp",
+		"i",
 		"md",
 		"plainnat",
 		"subgraph",
