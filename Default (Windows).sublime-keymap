@@ -61,4 +61,6 @@
 	{ "keys": ["ctrl+alt+shift+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
 	{ "keys": ["ctrl+alt+shift+n"], "command": "new_window" },
 	{ "keys": ["ctrl+alt+shift+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+	{ "keys": ["ctrl+alt+shift+e"], "command": "insert_snippet", "args": {"contents": "&$0"}},	
+	{ "keys": ["ctrl+alt+shift+\\"], "command": "insert_snippet", "args": {"contents": "\\\\\\\\$0"}},	
 ]
