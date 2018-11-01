@@ -62,5 +62,15 @@
 	{ "keys": ["ctrl+alt+shift+n"], "command": "new_window" },
 	{ "keys": ["ctrl+alt+shift+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["ctrl+alt+shift+e"], "command": "insert_snippet", "args": {"contents": "&$0"}},	
-	{ "keys": ["ctrl+alt+shift+\\"], "command": "insert_snippet", "args": {"contents": "\\\\\\\\$0"}},	
+	{ "keys": ["ctrl+alt+shift+enter"], "command": "insert_snippet", "args": {"contents": "\\\\\\\\\n$0"}},	
+	// For .R file
+	{ 	
+		"keys": ["ctrl+alt+shift+="], 
+		"command": "insert",
+		"args":{"characters":"<-"},
+		"context":
+		   [
+		      { "key": "selector", "operator": "equal", "operand": "source.r" }
+		   ]
+	},
 ]

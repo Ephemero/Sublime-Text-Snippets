@@ -11,8 +11,12 @@
 		"LaTeX Word Count",
 		"LaTeXTools",
 		"MarkdownEditing",
+		"Matlab Completions",
 		"Monokai Extended",
 		"Package Control",
-		"ProjectManager"
+		"ProjectManager",
+		"R-Box",
+		"SendCode",
+		"SublimeREPL"
 	]
 }

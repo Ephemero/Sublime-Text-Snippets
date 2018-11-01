@@ -1,0 +1,4 @@
+// These settings override both User and Default settings for the R syntax
+[
+	{ "keys": ["ctrl+4"], "command": "insert_snippet", "args": {"contents": "<-"}},	
+]

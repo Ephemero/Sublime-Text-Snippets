@@ -52,7 +52,14 @@
 		"nonparametrically",
 		"Hellinger",
 		"homoscedasticity",
-		""
+		"",
+		"subsampling",
+		"multimodal",
+		"nonempty",
+		"Banach",
+		"semicontinuous",
+		"equicontinuity",
+		"Donsker"
 	],
 	"auto_complete_triggers":
 	[
@@ -73,6 +80,7 @@
 	[
 		"CiteBibtex",
 		"Citer",
+		"SublimeREPL",
 		"Vintage"
 	],
 	"ignored_words":
@@ -97,6 +105,10 @@
 	{
 		"file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
 	},
+	"mdpopups.sublime_user_lang_map":
+	{
+	},
+	"mdpopups.use_sublime_highlighter": true,
 	"osx":
 	{
 		"file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
