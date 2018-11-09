@@ -63,6 +63,7 @@
 	{ "keys": ["ctrl+alt+shift+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["ctrl+alt+shift+e"], "command": "insert_snippet", "args": {"contents": "&$0"}},	
 	{ "keys": ["ctrl+alt+shift+enter"], "command": "insert_snippet", "args": {"contents": "\\\\\\\\\n$0"}},	
+	{ "keys": ["ctrl+alt+shift+l"],  "command": "move_to", "args": {"to": "eol", "extend": true}},
 	// For .R file
 	{ 	
 		"keys": ["ctrl+alt+shift+="], 

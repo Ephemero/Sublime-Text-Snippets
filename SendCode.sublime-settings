@@ -1,8 +1,8 @@
 {
-	"prog": "sublimerepl",
+	"prog": "rstudio",
 	"r":
 	{
 		"bracketed_paste_mode": false,
-		"prog": "screen"
+		"prog": "rstudio"
 	}
 }
