@@ -1,5 +1,6 @@
 {
     "default_extend_env": {"PATH": "{PATH};C:\\Users\\wl342\\Documents\\R\\R-3.4.2\\bin\\x64"},
+    "default_extend_env": {"PATH": "{PATH};C:\\Users\\wl342\\AppData\\Local\\Continuum\\anaconda3"},
     "show_transferred_text": true
 }
 // "C:\\Users\\wl342\\Documents\\R\\R-3.4.2\\bin\\Rscript.exe"

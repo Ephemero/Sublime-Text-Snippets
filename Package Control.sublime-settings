@@ -5,6 +5,8 @@
 	],
 	"installed_packages":
 	[
+		"Anaconda",
+		"AutoPEP8",
 		"BracketHighlighter",
 		"CiteBibtex",
 		"Citer",
@@ -14,9 +16,7 @@
 		"Matlab Completions",
 		"Monokai Extended",
 		"Package Control",
-		"ProjectManager",
 		"R-Box",
-		"SendCode",
-		"SublimeREPL"
+		"SendCode"
 	]
 }

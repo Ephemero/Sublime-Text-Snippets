@@ -1,5 +1,10 @@
 {
-	"prog": "rstudio",
+	"prog": "sublimerepl",
+	"python":
+	{
+		"bracketed_paste_mode": true,
+		"prog": "sublimerepl"
+	},
 	"r":
 	{
 		"bracketed_paste_mode": false,
