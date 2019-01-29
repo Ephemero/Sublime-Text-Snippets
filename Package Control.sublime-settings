@@ -5,16 +5,19 @@
 	],
 	"installed_packages":
 	[
-		"Anaconda",
 		"AutoPEP8",
 		"BracketHighlighter",
 		"CiteBibtex",
 		"Citer",
 		"LaTeX Word Count",
 		"LaTeXTools",
+		"LiveReload",
+		"Markdown Extended",
 		"MarkdownEditing",
+		"MarkdownPreview",
+		"MarkdownTOC",
+		"Materialize",
 		"Matlab Completions",
-		"Monokai Extended",
 		"Package Control",
 		"R-Box",
 		"SendCode"

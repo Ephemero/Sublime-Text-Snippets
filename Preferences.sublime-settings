@@ -59,7 +59,8 @@
 		"Banach",
 		"semicontinuous",
 		"equicontinuity",
-		"Donsker"
+		"Donsker",
+		"transversality"
 	],
 	"auto_complete_triggers":
 	[
@@ -73,13 +74,16 @@
 		}
 	],
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"color_scheme": "Packages/Materialize/schemes/Material Firewatch.tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
-	"font_size": 14,
+	"font_face": "Menlo",
+	"font_size": 14.5,
 	"ignored_packages":
 	[
 		"CiteBibtex",
 		"Citer",
+		"Markdown",
+		"Markdown Extended",
 		"Vintage"
 	],
 	"ignored_words":
@@ -103,6 +107,8 @@
 		"von",
 		"wl342"
 	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"linux":
 	{
 		"file_regex": "^(...*?):([0-9]+): ([0-9]*)([^\\.]+)"
@@ -118,7 +124,8 @@
 	"selector": "text.tex.latex",
 	"spell_check": false,
 	"target": "make_pdf",
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Material Firewatch.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"variants":
 	[
 		{

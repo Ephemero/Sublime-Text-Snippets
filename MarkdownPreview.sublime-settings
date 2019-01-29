@@ -1,0 +1,18 @@
+{
+	"enabled_parsers": ["markdown"],
+	"enable_autoreload": true,
+    "enable_mathjax": true,
+    "markdown_extensions": [
+        {
+            "pymdownx.arithmatex": {
+                "generic": true,
+            },
+        }
+    ],
+    "js": {
+        "markdown": [
+            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js",
+            "res://MarkdownPreview/js/math_config.js"
+        ]
+    },
+}
