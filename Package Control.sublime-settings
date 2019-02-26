@@ -5,7 +5,6 @@
 	],
 	"installed_packages":
 	[
-		"AutoPEP8",
 		"BracketHighlighter",
 		"CiteBibtex",
 		"Citer",
@@ -19,7 +18,7 @@
 		"Materialize",
 		"Matlab Completions",
 		"Package Control",
-		"R-Box",
+		"R-IDE",
 		"SendCode"
 	]
 }
